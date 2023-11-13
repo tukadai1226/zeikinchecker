@@ -1,0 +1,73 @@
+<script>
+var lastClickedList = null;
+
+function toggleList(listId) {
+  // 対象のリストを取得
+  var list = document.getElementById(listId);
+
+  // 前回クリックしたリストと同じ場合は非表示にし、異なる場合は表示・非表示を切り替える
+  if (lastClickedList === list) {
+    list.style.display = 'none';
+    lastClickedList = null;
+  } else {
+    // すべてのリストを非表示にする
+    var allLists = document.querySelectorAll('.icon-lists ul');
+    allLists.forEach(function(item) {
+      item.style.display = 'none';
+    });
+
+    // 対象のリストを表示
+    list.style.display = 'block';
+    lastClickedList = list;
+  }
+}
+</script>
+<div class="icons">
+  <div class="icon-container">
+    <%= image_tag "pig.png", class: "icon-logo", onclick: "toggleList('list1')" %>
+    <h2 class ="genre">年金</h2>
+    <div class="icon-lists">
+      <ul id="list1" style="display:none;">
+        <li><a href="#">Button 1</a></li>
+        <li><a href="#">Button 2</a></li>
+        <li><a href="#">Button 3</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="icon-container">
+    <%= image_tag "coin.png", class: "icon-logo", onclick: "toggleList('list2')" %>
+    <h2 class= "genre">所得税</h2>
+    <div class="icon-lists">
+      <ul id="list2" style="display:none;">
+        <li><a href="#">Button 1</a></li>
+        <li><a href="#">Button 2</a></li>
+        <li><a href="#">Button 3</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="icon-container">
+    <%= image_tag "crinical.png", class: "icon-logo", onclick: "toggleList('list3')" %>
+    <h2 class= "genre">医療・保険</h2>
+    <div class="icon-lists">
+      <ul id="list3" style="display:none;">
+        <li><a href="#">Button 1</a></li>
+        <li><a href="#">Button 2</a></li>
+        <li><a href="#">Button 3</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="icon-container">
+    <%= image_tag "house.png", class: "icon-logo", onclick: "toggleList('list4')" %>
+    <h2 class ="genre">住宅・不動産</h2>
+    <div class="icon-lists">
+      <ul id="list4" style="display:none;">
+        <li><a href="#">Button 1</a></li>
+        <li><a href="#">Button 2</a></li>
+        <li><a href="#">Button 3</a></li>
+      </ul>
+    </div>
+  </div>
+</div>

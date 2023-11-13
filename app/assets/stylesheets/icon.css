@@ -1,0 +1,55 @@
+.icons {
+  display: flex;
+  justify-content: center;
+  justify-content: space-around;
+}
+
+.genre {
+  font-size: 15px;
+
+}
+
+.icon-logo{
+  margin-top: 30px;
+  width: 80px;
+  height: 80px;
+}
+
+.icon-lists {
+  max-height: 0;
+  transition: max-height 0.3s ease-out;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.icon-lists ul {
+  padding: 0;
+  list-style: none;
+  margin: 0;
+}
+
+.icon-lists ul li {
+  padding: 5px;
+  border-bottom: 2px solid #eee;
+  transition: background-color 0.3s ease;
+}
+
+.icon-lists ul li:hover {
+  background-color: gray;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 30px;
+}
+
+.icon-logo {
+  transition: transform 0.3s ease; /* アイコンの拡大縮小に対するアニメーション設定 */
+}
+
+.icon-logo:hover {
+  transform: scale(1.2); /* ホバー時の拡大率 */
+}
