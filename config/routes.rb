@@ -1,4 +1,4 @@
 Rails.application.routes.draw do
   root to: "zeikins#index"
-  resources :zeikins, only: :index
+  resources :zeikins, only: [:index, :show]
 end
