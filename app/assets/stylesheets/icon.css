@@ -1,6 +1,5 @@
 .icons {
   display: flex;
-  justify-content: center;
   justify-content: space-around;
   margin-top: 10px;
 }
@@ -11,10 +10,15 @@
   transform: scale(1.1);
 }
 
-.icon-logo{
+.icon-logo {
   margin-top: 30px;
   width: 80px;
   height: 80px;
+  transition: transform 0.3s ease;
+}
+
+.icon-logo:hover {
+  transform: scale(1.2);
 }
 
 .icon-lists {
@@ -36,11 +40,11 @@
 .icon-lists ul li {
   padding: 5px;
   border-bottom: 2px solid #eee;
-  transition: background-color all 0.3s ease;
+  transition: background-color 0.3s ease;
 }
 
 .icon-lists ul li:hover {
-  background-color: 		#EEFFFF;
+  background-color: #EEFFFF;
   transform: scale(1.1);
 }
 
@@ -50,20 +54,12 @@ a {
   font-size: 30px;
 }
 
-.icon-logo {
-  transition: transform 0.3s ease; /* アイコンの拡大縮小に対するアニメーション設定 */
-}
-
-.icon-logo:hover {
-  transform: scale(1.2); /* ホバー時の拡大率 */
-}
-
 .icon-container {
-  cursor: pointer; /* カーソルをポインターに設定 */
+  cursor: pointer;
 }
 
 .icon-container:hover {
-  transform: scale(1.1); /* ホバー時にアイコンを拡大 */
+  transform: scale(1.1);
 }
 
 .icon-container:hover .icon-lists {

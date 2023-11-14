@@ -7,21 +7,26 @@
     if (lastClickedListId === listId) {
       list.style.display = list.style.display === 'none' ? 'block' : 'none';
     } else {
-      var lastClickedList = document.getElementById(lastClickedListId);
-      if (lastClickedList) {
-        lastClickedList.style.display = 'none';
-      }
+      hideAllLists();
       list.style.display = 'block';
       lastClickedListId = listId;
     }
   }
+
+  function hideAllLists() {
+    var allLists = document.querySelectorAll('.icon-lists ul');
+    allLists.forEach(function(item) {
+      item.style.display = 'none';
+    });
+  }
 </script>
+
 <div class="icons">
   <div class="icon-container" onclick="toggleList('list1')">
     <%= image_tag("pig.png", class: "icon-logo") %>
     <h2 class="genre">年金</h2>
     <div class="icon-lists">
-      <ul id="list1" >
+      <ul id="list1">
         <li><%= link_to '詳細1', zeikin_path(1) %></li>
         <li><%= link_to '詳細2', zeikin_path(2) %></li>
         <li><%= link_to '詳細3', zeikin_path(3) %></li>

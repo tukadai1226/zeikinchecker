@@ -1,39 +1,18 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Salary Simulation</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    /* ここにスタイルの定義を追加 */
+  </style>
+</head>
+<body>
+
 <script>
-function calculateSalary() {
-  // フォームから入力値を取得
-  var basicSalary = parseInt(document.getElementById("basicSalary").value);
-  // 他の入力値も同様に取得
 
-  // 月収の計算ロジック（ここでは簡単な例を示します）
-  var totalSalary = basicSalary;
-
-  // 各項目の計算（簡単な例）
-  var pensionAmount = Math.floor(basicSalary * 0.1); // 厚生年金
-  var healthInsuranceAmount = Math.floor(basicSalary * 0.05); // 健康保険
-  var employmentInsuranceAmount = Math.floor(basicSalary * 0.02); // 雇用保険
-  var nationalPensionAmount = 10000; // 国民年金
-  var nationalHealthInsuranceAmount = 5000; // 国民健康保険
-  var incomeTaxAmount = Math.floor(basicSalary * 0.1); // 所得税
-  var residentTaxAmount = Math.floor(basicSalary * 0.05); // 住民税
-
-  // 手取り収入の計算
-  var netIncome = totalSalary - (pensionAmount + healthInsuranceAmount + employmentInsuranceAmount + nationalPensionAmount + nationalHealthInsuranceAmount + incomeTaxAmount + residentTaxAmount);
-
-  // 計算結果を表に出力
-  document.getElementById("basicSalaryAmount").textContent = basicSalary + " 円";
-  document.getElementById("pensionAmount").textContent = pensionAmount + " 円";
-  document.getElementById("healthInsuranceAmount").textContent = healthInsuranceAmount + " 円";
-  document.getElementById("employmentInsuranceAmount").textContent = employmentInsuranceAmount + " 円";
-  document.getElementById("nationalPensionAmount").textContent = nationalPensionAmount + " 円";
-  document.getElementById("nationalHealthInsuranceAmount").textContent = nationalHealthInsuranceAmount + " 円";
-  document.getElementById("incomeTaxAmount").textContent = incomeTaxAmount + " 円";
-  document.getElementById("residentTaxAmount").textContent = residentTaxAmount + " 円";
-  document.getElementById("netIncome").textContent = netIncome + " 円";
-}
-
-function showResults() {
-  // ここに showResults のコードを配置
-}
 </script>
 
 <%= render partial: "header" %>
