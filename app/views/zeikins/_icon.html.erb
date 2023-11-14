@@ -1,28 +1,29 @@
 <script>
-  var lastClickedListId = null;
+var lastHoveredIcon = null;
 
-  function toggleList(listId) {
-    var list = document.getElementById(listId);
+function toggleListOnHover(listId) {
+  var list = document.getElementById(listId);
 
-    if (lastClickedListId === listId) {
-      list.style.display = list.style.display === 'none' ? 'block' : 'none';
-    } else {
-      hideAllLists();
-      list.style.display = 'block';
-      lastClickedListId = listId;
-    }
+  if (lastHoveredIcon === listId && list.style.display !== 'none') {
+    // カーソルが同じアイコンまたは文字に戻ってきたら何もしない
+    return;
   }
 
-  function hideAllLists() {
-    var allLists = document.querySelectorAll('.icon-lists ul');
-    allLists.forEach(function(item) {
-      item.style.display = 'none';
-    });
-  }
+  hideAllLists();
+  list.style.display = 'block';
+  lastHoveredIcon = listId;
+}
+
+function hideAllLists() {
+  var allLists = document.querySelectorAll('.icon-lists ul');
+  allLists.forEach(function(item) {
+    item.style.display = 'none';
+  });
+}
 </script>
 
 <div class="icons">
-  <div class="icon-container" onclick="toggleList('list1')">
+  <div class="icon-container" >
     <%= image_tag("pig.png", class: "icon-logo") %>
     <h2 class="genre">年金</h2>
     <div class="icon-lists">
@@ -35,7 +36,7 @@
   </div>
 
 
-  <div class="icon-container" onclick="toggleList('list2')">
+  <div class="icon-container" >
     <%= image_tag("coin.png", class: "icon-logo") %>
     <h2 class="genre">所得税</h2>
     <div class="icon-lists">
@@ -47,7 +48,7 @@
     </div>
   </div>
 
-    <div class="icon-container" onclick="toggleList('list3')">
+  <div class="icon-container" >
     <%= image_tag("clinical.png", class: "icon-logo") %>
     <h2 class="genre">医療・保険</h2>
     <div class="icon-lists">
@@ -59,9 +60,9 @@
     </div>
   </div>
 
-    <div class="icon-container" onclick="toggleList('list4')">
+  <div class="icon-container" >
     <%= image_tag("house.png", class: "icon-logo") %>
-    <h2 class="genre">医療・保険</h2>
+    <h2 class="genre">住宅</h2>
     <div class="icon-lists">
       <ul id="list4" >
         <li><%= link_to '詳細1', zeikin_path(31) %></li>
