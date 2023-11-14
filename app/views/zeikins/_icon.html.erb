@@ -1,72 +1,67 @@
 <script>
-var lastClickedList = null;
+  var lastClickedListId = null;
 
-function toggleList(listId) {
-  // 対象のリストを取得
-  var list = document.getElementById(listId);
+  function toggleList(listId) {
+    var list = document.getElementById(listId);
 
-  // 前回クリックしたリストと同じ場合は非表示にし、異なる場合は表示・非表示を切り替える
-  if (lastClickedList === list) {
-    list.style.display = 'none';
-    lastClickedList = null;
-  } else {
-    // すべてのリストを非表示にする
-    var allLists = document.querySelectorAll('.icon-lists ul');
-    allLists.forEach(function(item) {
-      item.style.display = 'none';
-    });
-
-    // 対象のリストを表示
-    list.style.display = 'block';
-    lastClickedList = list;
+    if (lastClickedListId === listId) {
+      list.style.display = list.style.display === 'none' ? 'block' : 'none';
+    } else {
+      var lastClickedList = document.getElementById(lastClickedListId);
+      if (lastClickedList) {
+        lastClickedList.style.display = 'none';
+      }
+      list.style.display = 'block';
+      lastClickedListId = listId;
+    }
   }
-}
 </script>
 <div class="icons">
-  <div class="icon-container">
-    <%= image_tag "pig.png", class: "icon-logo", onclick: "toggleList('list1')" %>
-    <h2 class ="genre">年金</h2>
+  <div class="icon-container" onclick="toggleList('list1')">
+    <%= image_tag("pig.png", class: "icon-logo") %>
+    <h2 class="genre">年金</h2>
     <div class="icon-lists">
-      <ul id="list1" style="display:none;">
-        <li> <%= link_to '詳細1', zeikin_path(1) %></li>
-        <li> <%= link_to '詳細2', zeikin_path(2) %></li>
-        <li> <%= link_to '詳細3', zeikin_path(13) %></li>
+      <ul id="list1" >
+        <li><%= link_to '詳細1', zeikin_path(1) %></li>
+        <li><%= link_to '詳細2', zeikin_path(2) %></li>
+        <li><%= link_to '詳細3', zeikin_path(3) %></li>
       </ul>
     </div>
   </div>
 
-  <div class="icon-container">
-    <%= image_tag "coin.png", class: "icon-logo", onclick: "toggleList('list2')" %>
-    <h2 class= "genre">所得税</h2>
+
+  <div class="icon-container" onclick="toggleList('list2')">
+    <%= image_tag("coin.png", class: "icon-logo") %>
+    <h2 class="genre">所得税</h2>
     <div class="icon-lists">
-      <ul id="list2" style="display:none;">
-        <li> <%= link_to '詳細11', zeikin_path(11) %></li>
-        <li> <%= link_to '詳細12', zeikin_path(12) %></li>
-        <li> <%= link_to '詳細13', zeikin_path(13) %></li>
+      <ul id="list2" >
+        <li><%= link_to '詳細1', zeikin_path(11) %></li>
+        <li><%= link_to '詳細2', zeikin_path(12) %></li>
+        <li><%= link_to '詳細3', zeikin_path(13) %></li>
       </ul>
     </div>
   </div>
 
-  <div class="icon-container">
-    <%= image_tag "crinical.png", class: "icon-logo", onclick: "toggleList('list3')" %>
-    <h2 class= "genre">医療・保険</h2>
+    <div class="icon-container" onclick="toggleList('list3')">
+    <%= image_tag("clinical.png", class: "icon-logo") %>
+    <h2 class="genre">医療・保険</h2>
     <div class="icon-lists">
-      <ul id="list3" style="display:none;">
-        <li> <%= link_to '詳細21', zeikin_path(21) %></li>
-        <li> <%= link_to '詳細22', zeikin_path(22) %></li>
-        <li> <%= link_to '詳細23', zeikin_path(23) %></li>
+      <ul id="list3" >
+        <li><%= link_to '詳細1', zeikin_path(21) %></li>
+        <li><%= link_to '詳細2', zeikin_path(22) %></li>
+        <li><%= link_to '詳細3', zeikin_path(23) %></li>
       </ul>
     </div>
   </div>
 
-  <div class="icon-container">
-    <%= image_tag "house.png", class: "icon-logo", onclick: "toggleList('list4')" %>
-    <h2 class ="genre">住宅・不動産</h2>
+    <div class="icon-container" onclick="toggleList('list4')">
+    <%= image_tag("house.png", class: "icon-logo") %>
+    <h2 class="genre">医療・保険</h2>
     <div class="icon-lists">
-      <ul id="list4" style="display:none;">
-        <li> <%= link_to '詳細31', zeikin_path(31) %></li>
-        <li> <%= link_to '詳細32', zeikin_path(32) %></li>
-        <li> <%= link_to '詳細33', zeikin_path(33) %></li>
+      <ul id="list4" >
+        <li><%= link_to '詳細1', zeikin_path(31) %></li>
+        <li><%= link_to '詳細2', zeikin_path(32) %></li>
+        <li><%= link_to '詳細3', zeikin_path(33) %></li>
       </ul>
     </div>
   </div>

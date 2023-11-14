@@ -1,9 +1,16 @@
 header {
-  display: flex;
-  background-color: #253141 !important;
+  background-color: #FFFF !important;
   height: 70px !important;
 }
-
+.hedder{
+  height: 95%;
+  box-shadow: 6px 6px 10px 0px rgba(0, 0, 0, 0.4);
+}
+.kk{
+  
+  border-radius: 3px;
+  display: flex;
+}
 .heading {
   width: 50%;
   margin-left: 30px;
@@ -16,7 +23,7 @@ header {
 
 .nav-lists {
   display: flex;
-  justify-content: space-between !important;
+  justify-content:flex-end  !important;
   
 }
 
@@ -29,6 +36,7 @@ header {
   overflow: hidden;
   color: #aa8f7b;
   font-family: 'Josefin Sans', sans-serif;
+  
 }
 
 .title span {
@@ -85,6 +93,8 @@ header {
 .lists {
   list-style: none;
   margin-bottom: 10px;
+  margin-right: 10px;
+  margin-top: 10px;
 }
 
 .list {
@@ -98,18 +108,18 @@ header {
   background-size: 200% auto;
   background-image: linear-gradient(
     to right,
-    #2F4F4F 0%,
-    #2F4F4F 50%,
-    #2F3E51 50%,
-    #2F3E51 100%
+    #006400 0%,
+    #006400 50%,
+    #2E8B57 50%,
+    #2E8B57 100%
   );
   box-shadow: 0 3px 10px rgb(0 0 0 / 16%);
   transition: background-position ease 0.4s;
   text-align: center;
-  color: #aa8f7b;
+  color: white;
   text-decoration: none;
   font-weight: bold;
-  font-size: 20px;
+  font-size: 14px;
 }
 
 .list:hover {
