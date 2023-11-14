@@ -28,49 +28,10 @@
     <%# 入力フォーム %>
     <div class="format">
       <%# 月収 %>
-      <div class ="month-many">
-        <form id="salarySimulationForm">
-          <label for="basicSalary">基本月給 (円):</label>
-            <input type="text" id="basicSalary" name="basicSalary" required>
-      </div>
-      <%# 就業地 %>
-        <div class ="countoly">
-          <label for="workLocation">就業地:</label>
-            <select id="workLocation" name="workLocation">
-              <option value="tokyo">東京</option>
-              <option value="osaka">大阪</option>
-          <!-- 他の就業地のオプションを追加 -->
-            </select>
-        </div>
-      <%# 年齢 %>
-      <div class = "age">
-        <label for="age">年齢 (歳):</label>
-        <input type="number" id="age" name="age" required>
-      </div>
-      <%# 扶養人数 %>
-      <div class = "num">
-        <label for="dependents">扶養人数:</label>
-        <input type="number" id="dependents" name="dependents" required>
-      </div>
-      <%# 残業代 %>
-      <div class="zanngyou">
-        <label for="overtimePay">残業代 (円):</label>
-        <input type="text" id="overtimePay" name="overtimePay" required>
-      </div>
-      <%# 交通費 %>
-      <div class = "koutuu">
-        <label for="transportationCost">交通費 (円):</label>
-        <input type="text" id="transportationCost" name="transportationCost" required>
-      </div>
-      <%# 計算 %>
-      <div class= "keisan">
-        <button type="button" id="send-button" onclick="calculateSalary(); showResults();">計算</button>
-      </div>
-        </form>
-    </div>
+  <%= render partial:"form"%>
   </div>
     <%# 上までがフォーマット %>
-<div>
+  <div>
     <h1 class="shu">税金・保険料シミュレーション</h1>
     </div>
     <%# 結果 %>
