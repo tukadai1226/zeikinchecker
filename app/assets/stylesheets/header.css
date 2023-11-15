@@ -7,7 +7,6 @@ header {
   box-shadow: 6px 6px 10px 0px rgba(0, 0, 0, 0.4);
 }
 .kk{
-  
   border-radius: 3px;
   display: flex;
 }
@@ -24,7 +23,7 @@ header {
 .nav-lists {
   display: flex;
   justify-content:flex-end  !important;
-  
+  padding: 0 10px;
 }
 
 
@@ -36,7 +35,6 @@ header {
   overflow: hidden;
   color: #aa8f7b;
   font-family: 'Josefin Sans', sans-serif;
-  
 }
 
 .title span {
@@ -126,7 +124,31 @@ header {
   background-position: 0 0;
 }
 
-/****** Base style. ******/
-body {
-  font-family: "Yu Gothic Medium", "游ゴシック Medium", "Yu Gothic", "游ゴシック", YuGothic, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo";
+.nav-lists {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 1.0s ease, transform 1.0s ease;
+}
+
+.nav-lists.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.hedder {
+
+  position: relative;
+  overflow: hidden; /* 子要素のオーバーフローを隠す */
+}
+
+.navbar {
+  width: 100%;
+  position: absolute;
+  bottom: -20px; /* ヘッダーの中央に配置（35pxはヘッダーの高さの半分） */
+  transition: bottom 2.0s ease 10.0s; /* アニメーションを追加 *//* 遅延を追加 */
+
+}
+
+body.loaded .nav-lists,
+body.loaded .navbar {
+  transition: opacity 1.0s ease, transform 1.0s ease; /* 遅延を削除 */
 }
