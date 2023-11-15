@@ -1,5 +1,5 @@
-   // ページが読み込まれたときの処理
-   window.onload = function () {
+const graph = () => {
+// ページが読み込まれたときの処理
     // 初期の計算結果（仮の値）
     const initialResults = {
       手取り収入: 50, 
@@ -25,17 +25,17 @@
     };
 
     // チャートを描画
-    const ctx = document.getElementById('myDonutChart').getContext('2d');
-    const myDonutChart = new Chart(ctx, {
-      type: 'doughnut',
-      data: chartData,
-      options: {
-        legend: {
-          display: true,
-          position: 'right'
-        }
+ const ctx = document.getElementById('myDonutChart').getContext('2d');
+  let myDonutChart = new Chart(ctx, {
+    type: 'doughnut',
+    data: chartData,
+    options: {
+      legend: {
+        display: true,
+        position: 'right'
       }
-    });
+    }
+  });
 
     // ボタンクリック時に円グラフを再描画する関数
     function drawDonutChart(results) {
@@ -94,4 +94,6 @@
         住民税: residentTaxAmount
       });
     }
-  }
+};
+window.addEventListener("turbo:load", graph);
+window.addEventListener("turbo:render", graph);
