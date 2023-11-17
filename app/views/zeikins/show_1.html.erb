@@ -1,1 +1,47 @@
-1
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Salary Simulation</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    /* ここにスタイルの定義を追加 */
+  </style>
+</head>
+<body>
+
+<script>
+
+</script>
+
+<%= render partial: "header" %>
+<%# 赤の背景 %>
+<div class="bg">
+  <div class="main">
+    <div class="m">
+  <%# 円グラフ %>
+    <div class= "graph">
+      <canvas id="myDonutChart" width="300" height="300"></canvas>
+    </div>
+
+    <%# 入力フォーム %>
+    <div class="format">
+      <%# 月収 %>
+  <%= render partial:"form"%>
+  </div>
+    <%# 上までがフォーマット %>
+  <div>
+    <h1 class="shu">税金・保険料シミュレーション</h1>
+    </div>
+    <%# 結果 %>
+  <%= render partial: "result" %>
+  <div>
+  <%= render partial: "icon"%>
+  </div>
+  <div class="under">
+<footer>
+<%= render partial: "footer"%>
+</footer>
+</div>
+</div>
