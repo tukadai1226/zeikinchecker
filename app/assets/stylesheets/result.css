@@ -1,10 +1,13 @@
+
 .result {
   display: flex;
   justify-content: center;
+
 }
 
 table {
-  width: 70%; /* 例: 全体の幅の70%に設定 */
+  width: 50%; /* 例: 全体の幅の70%に設定 */
+  height: 50%;
   font-family: Arial, sans-serif;
   border-collapse: collapse; /* セルの境界線を重ねる */
   margin-top: 10px; /* 余白を追加 */

@@ -6,7 +6,7 @@
   <title>Salary Simulation</title>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <style>
-    /* ここにスタイルの定義を追加 */
+
   </style>
 </head>
 <body>
@@ -16,7 +16,7 @@
 </script>
 
 <%= render partial: "header" %>
-<%# 赤の背景 %>
+
 <div class="bg">
   <div class="main">
     <div class="m">
@@ -31,17 +31,21 @@
   <%= render partial:"form"%>
   </div>
     <%# 上までがフォーマット %>
-  <div>
-    <h1 class="shu">税金・保険料シミュレーション</h1>
+  <div class="z">
+    <div class="shu">税金・保険料シミュレーション</div>
     </div>
     <%# 結果 %>
+    
   <%= render partial: "result" %>
+
   <div>
   <%= render partial: "icon"%>
   </div>
+
   <div class="under">
 <footer>
 <%= render partial: "footer"%>
 </footer>
 </div>
+
 </div>

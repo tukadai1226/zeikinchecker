@@ -6,14 +6,55 @@
   <title>Salary Simulation</title>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <style>
-    /* ここにスタイルの定義を追加 */
+    
+.format .right-align {
+  text-align: right;
+}
+
+
+
   </style>
 </head>
+
+
 <body>
 
 <script>
+function calculatePension() {
+    var workYears = parseInt(document.getElementById('workYears').value, 10);
+    var unemployedMonths = parseInt(document.getElementById('unemployedMonths').value, 10);
+    var additionalMonths = parseInt(document.getElementById('additionalMonths').value, 10);
 
+    // 勤めた年と雇用されていなかった月、追納した月の回数を合算して納付済み月数を計算
+    var paidMonths = workYears * 12 - unemployedMonths + additionalMonths;
+
+    var pensionAmountTotal = Math.floor(777800 * (paidMonths / 480));
+    var pensionAmountMonthly = Math.floor(pensionAmountTotal / 12);
+
+    document.getElementById('Amount_1_monthly').textContent = pensionAmountMonthly.toLocaleString() + '円';
+    document.getElementById('Amount_1_total').textContent = pensionAmountTotal.toLocaleString() + '円';
+
+    updateDonutChart(pensionAmountTotal);
+  }
+
+  function updateDonutChart(pensionAmount) {
+    var ctx = document.getElementById('myDonutChart_1').getContext('2d');
+    var myDonutChart = new Chart(ctx, {
+      type: 'doughnut',
+      data: {
+        datasets: [{
+          data: [pensionAmount, 0],
+          backgroundColor: ['#36A2EB', '#FFFFFF'],
+        }],
+      },
+      options: {
+        cutoutPercentage: 70,
+        responsive: true,
+      },
+    });
+  }
 </script>
+
 
 <%= render partial: "header" %>
 <%# 赤の背景 %>
@@ -22,20 +63,89 @@
     <div class="m">
   <%# 円グラフ %>
     <div class= "graph">
-      <canvas id="myDonutChart" width="300" height="300"></canvas>
+      <canvas id="myDonutChart_1" width="300" height="300"></canvas>
     </div>
 
     <%# 入力フォーム %>
     <div class="format">
-      <%# 月収 %>
-  <%= render partial:"form"%>
+      <div class="form-container">
+        <label for="workYears">勤続年数:</label>
+        <input type="text" id="workYears" class="right-align" required>
+    </div>
+      <div class="form-container">
+    <label for="unemployedMonths">雇用されていなかった月:</label>
+    <select id="unemployedMonths"  required>
+      <option value="">選択してください</option>
+      <option value="0">0ヶ月</option>
+      <option value="1">1ヶ月</option>
+      <option value="2">2ヶ月</option>
+      <option value="3">3ヶ月</option>
+      <option value="4">4ヶ月</option>
+      <option value="5">5ヶ月</option>
+      <option value="6">6ヶ月</option>
+      <option value="7">7ヶ月</option>
+      <option value="8">8ヶ月</option>
+      <option value="9">9ヶ月</option>
+      <option value="10">10ヶ月</option>
+      <option value="11">11ヶ月</option>
+      <option value="12">12ヶ月</option>
+      
+    </select>
+  </div>
+        <div class="form-container">
+    <label for="additionalMonths">追納した月の回数:</label>
+    <select id="additionalMonths" required>
+      <option value="">選択してください</option>
+      <option value="0">0ヶ月</option>
+      <option value="1">1ヶ月</option>
+      <option value="2">2ヶ月</option>
+      <option value="3">3ヶ月</option>
+      <option value="4">4ヶ月</option>
+      <option value="5">5ヶ月</option>
+      <option value="6">6ヶ月</option>
+      <option value="7">7ヶ月</option>
+      <option value="8">8ヶ月</option>
+      <option value="9">9ヶ月</option>
+      <option value="10">10ヶ月</option>
+      <option value="11">11ヶ月</option>
+      <option value="12">12ヶ月</option>
+      
+    </select>
+      </div>
+
+
+      <%# 計算 %>
+      <div class= "keisan">
+        <button type="button" id="result" onclick="calculatePension(); showResults_1();">計算</button>
+      </div>
+      </form>
+    </div>
   </div>
     <%# 上までがフォーマット %>
   <div>
     <h1 class="shu">税金・保険料シミュレーション</h1>
     </div>
     <%# 結果 %>
-  <%= render partial: "result" %>
+<div class ="result" id="result">
+<table id="salaryResultTable">
+  <thead>
+          <tr>
+            <th>項目</th>
+            <th>金額 (円)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>老齢基礎年金（年間総支給額）</td>
+            <td id="Amount_1_total">0円</td>
+          </tr>
+          <tr>
+            <td>老齢基礎年金（月間支給額）</td>
+            <td id="Amount_1_monthly">0円</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   <div>
   <%= render partial: "icon"%>
   </div>

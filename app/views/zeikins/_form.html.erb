@@ -1,3 +1,17 @@
+ <script>
+function convertToHalfWidth(input) {
+  // 全角文字を半角文字に変換
+  var halfWidthText = input.value.replace(/[０-９Ａ-Ｚａ-ｚ]/g, function(s) {
+    return String.fromCharCode(s.charCodeAt(0) - 0xFEE0);
+  });
+
+  // 半角文字以外の文字を削除
+  var alphanumericText = halfWidthText.replace(/[^a-zA-Z0-9]/g, '');
+
+  // 入力フィールドにセット
+  input.value = alphanumericText;
+}
+</script>
  <div class="basic-salary">
   <label for="basicSalary">基本月給 (円):</label>
   <input type="text" id="basicSalary" name="basicSalary" class="right-align" rrequired autocomplete="off">
