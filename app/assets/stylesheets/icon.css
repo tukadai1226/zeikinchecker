@@ -1,7 +1,9 @@
 .icons {
-  display: flex;
-  justify-content: space-around;
   margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: calc(10% - 10px);
 }
 
 .genre {
@@ -25,9 +27,8 @@
   display: none;
   max-height: 0;
   transition: max-height 0.3s ease-out;
-  background-color: green;
   border: 1px solid #ddd;
-  border-radius: 5px;
+  border-radius: 1px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
@@ -54,8 +55,11 @@ a {
   font-size: 30px;
 }
 
+
+
 .icon-container {
   cursor: pointer;
+  
 }
 
 .icon-container:hover {
