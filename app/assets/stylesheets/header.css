@@ -87,7 +87,6 @@ header {
   transition-delay: 0.78s;
 }
 
-
 .lists {
   list-style: none;
   margin-bottom: 10px;
@@ -135,20 +134,64 @@ header {
   transform: translateY(0);
 }
 .hedder {
-
   position: relative;
   overflow: hidden; /* 子要素のオーバーフローを隠す */
 }
 
 .navbar {
   width: 100%;
+  position: fixed;
   position: absolute;
   bottom: -20px; /* ヘッダーの中央に配置（35pxはヘッダーの高さの半分） */
   transition: bottom 2.0s ease 10.0s; /* アニメーションを追加 *//* 遅延を追加 */
-
 }
 
 body.loaded .nav-lists,
 body.loaded .navbar {
   transition: opacity 1.0s ease, transform 1.0s ease; /* 遅延を削除 */
+}
+
+.new-hamburger-btn {
+  display: none;
+  box-sizing: border-box;
+  cursor: pointer;
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 3;
+  color: #333;
+  height: 50px;
+  width: 50px;
+  border: 2px solid gray;
+  border-radius: 20%;
+}
+
+.new-nav-lists {
+  display: none;
+  list-style: none;
+  padding: 0;
+  position: fixed;
+  top: 60px;
+  right: 80px;
+  border-radius: 5px;
+  z-index: 2;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.new-nav-lists.visible {
+  margin-top: 20px;
+  display: none;
+  flex-direction: column;
+  opacity: 1;
+}
+
+.new-hamburger-btn::before,
+.new-hamburger-btn::after,
+.new-hamburger-btn div {
+  display: block;
+  background-color: gray;
+  height: 4px;
+  width: 30px;
+  margin: 9px auto;
 }

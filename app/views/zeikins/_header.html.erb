@@ -1,36 +1,63 @@
-<script>
+<body>
+  <script>
+    // Add your existing JavaScript code here
+    document.addEventListener('turbo:load', function() {
+      var navLists = document.querySelector('.nav-lists');
+      document.body.classList.add('loaded');
+      navLists.classList.add('visible');
+    });
 
-document.addEventListener('turbo:load', function() {
-  var navLists = document.querySelector('.nav-lists');
-  document.body.classList.add('loaded');
-  navLists.classList.add('visible');
-});
-</script>
+    function toggleMenu() {
+      var navLists = document.querySelector('.nav-lists');
+      navLists.classList.toggle('visible');
+    }
 
-<header>
-  <div class="hedder">
-    <div class="kk">
-      <div class="heading">
-        <h1 class="title">
-          <span>税</span>
-          <span>金</span>
-          <span>&nbsp;</span>
-          <span>C</span>
-          <span>H</span>
-          <span>E</span>
-          <span>C</span>
-          <span>K</span>
-          <span>E</span>
-          <span>R</span>
-        </h1>
+    function toggleNewMenu() {
+    var newNavLists = document.querySelector('.new-nav-lists');
+    newNavLists.classList.toggle('visible');
+}
+  </script>
+
+  <header>
+    <div class="hedder">
+      <div class="kk">
+        <div class="heading">
+          <h1 class="title">
+            <span>税</span>
+            <span>金</span>
+            <span>&nbsp;</span>
+            <span>C</span>
+            <span>H</span>
+            <span>E</span>
+            <span>C</span>
+            <span>K</span>
+            <span>E</span>
+            <span>R</span>
+          </h1>
+        </div>
       </div>
-    </div>
-    <div class="navbar">
-      <ul class="nav-lists">
+       <div class="new-hamburger-btn" onclick="toggleNewMenu()">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
+
+      <!-- 新しいメニュー -->
+      <ul class="new-nav-lists">
         <li class="lists"><a href="#" class="list">ホーム</a></li>
         <li class="lists"><a href="#" class="list">使い方</a></li>
         <li class="lists"><a href="#" class="list">用語集</a></li>
       </ul>
+      <div class="navbar">
+        <ul class="nav-lists">
+          <li class="lists"><a href="#" class="list">ホーム</a></li>
+          <li class="lists"><a href="#" class="list">使い方</a></li>
+          <li class="lists"><a href="#" class="list">用語集</a></li>
+        </ul>
+      </div>
+
+     
     </div>
-  </div>
-</header>
+  </header>
+</body>
+</html>
