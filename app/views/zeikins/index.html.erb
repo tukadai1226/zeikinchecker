@@ -5,47 +5,34 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Salary Simulation</title>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <style>
-
-  </style>
 </head>
+
 <body>
-
-<script>
-
-</script>
-
-<%= render partial: "header" %>
-
-<div class="bg">
-  <div class="main">
-    <div class="m">
-  <%# 円グラフ %>
-    <div class= "graph">
-      <canvas id="myDonutChart" width="300" height="300"></canvas>
-    </div>
-
-    <%# 入力フォーム %>
-    <div class="format">
-      <%# 月収 %>
-  <%= render partial:"form"%>
-  </div>
-    <%# 上までがフォーマット %>
-  <div class="z">
-    <div class="shu">税金・保険料シミュレーション</div>
-    </div>
-    <%# 結果 %>
-    
-  <%= render partial: "result" %>
-
-  <div>
-  <%= render partial: "icon"%>
-  </div>
-
-  <div class="under">
-<footer>
-<%= render partial: "footer"%>
-</footer>
-</div>
-
+      <%# ヘッダー %>
+      <%= render partial: "header" %>
+  <div class="bg">
+    <div class="main">
+      <div class="m">
+      <%# 円グラフ %>
+      <div class= "graph">
+        <canvas id="myDonutChart" width="300" height="300"></canvas>
+      </div>
+      <%# 入力フォーム %>
+      <div class="format">
+      <%= render partial:"form"%>
+      </div>
+      <%# 上までがフォーマット %>
+      <div class="z">
+        <p class="shu">シミュレーション</p>
+      </div>
+      <%# 結果 %>
+      <%= render partial: "result" %>
+      <%# アイコン %>
+      <div>
+        <%= render partial: "icon"%>
+      </div>
+      <%# フッター %>
+      <div class="under">
+        <%= render partial: "footer"%>
+      </div>
 </div>
