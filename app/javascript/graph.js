@@ -26,7 +26,7 @@ const graph = () => {
 
     // チャートを描画
  const ctx = document.getElementById('myDonutChart').getContext('2d');
-  let myDonutChart = new Chart(ctx, {
+  const myDonutChart = new Chart(ctx, {
     type: 'doughnut',
     data: chartData,
     options: {
@@ -52,23 +52,23 @@ const graph = () => {
   // フォームから入力値を取得し、計算して円グラフを描画する関数
   function calculateSalary(callback) {
     // フォームから入力値を取得
-    var basicSalary = parseInt(document.getElementById("basicSalary").value);
+    const basicSalary = parseInt(document.getElementById("basicSalary").value);
     // 他の入力値も同様に取得
 
     // 月収の計算ロジック（ここでは簡単な例を示します）
-    var totalSalary = basicSalary;
+    const totalSalary = basicSalary;
 
     // 各項目の計算（簡単な例）
-    var pensionAmount = Math.floor(basicSalary * 0.1); // 厚生年金
-    var healthInsuranceAmount = Math.floor(basicSalary * 0.05); // 健康保険
-    var employmentInsuranceAmount = Math.floor(basicSalary * 0.02); // 雇用保険
-    var nationalPensionAmount = 10000; // 国民年金
-    var nationalHealthInsuranceAmount = 5000; // 国民健康保険
-    var incomeTaxAmount = Math.floor(basicSalary * 0.1); // 所得税
-    var residentTaxAmount = Math.floor(basicSalary * 0.05); // 住民税
+    const pensionAmount = Math.floor(basicSalary * 0.1); // 厚生年金
+    const healthInsuranceAmount = Math.floor(basicSalary * 0.05); // 健康保険
+    const employmentInsuranceAmount = Math.floor(basicSalary * 0.02); // 雇用保険
+    const nationalPensionAmount = 10000; // 国民年金
+    const nationalHealthInsuranceAmount = 5000; // 国民健康保険
+    const incomeTaxAmount = Math.floor(basicSalary * 0.1); // 所得税
+    const residentTaxAmount = Math.floor(basicSalary * 0.05); // 住民税
 
     // 手取り収入の計算
-    var netIncome = totalSalary - (pensionAmount + healthInsuranceAmount + employmentInsuranceAmount + nationalPensionAmount + nationalHealthInsuranceAmount + incomeTaxAmount + residentTaxAmount);
+    const netIncome = totalSalary - (pensionAmount + healthInsuranceAmount + employmentInsuranceAmount + nationalPensionAmount + nationalHealthInsuranceAmount + incomeTaxAmount + residentTaxAmount);
 
     // 計算結果を表に出力
     document.getElementById("basicSalaryAmount").textContent = basicSalary + " 円";

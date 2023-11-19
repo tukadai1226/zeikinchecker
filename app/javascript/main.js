@@ -8,5 +8,6 @@ setTimeout(() => {
   $target.addClass(CLASSNAME); // アニメーションを開始
 }, TIMEOUT);
 };
+
 window.addEventListener("turbo:load", main);
 window.addEventListener("turbo:render", main);
