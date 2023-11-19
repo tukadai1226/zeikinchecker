@@ -15,94 +15,89 @@
     height: 20px;
   }
     /* フォーマット全体 */
-    .bg{
+  .bg{
     height: 100vh;
-    }
+  }
 
-    .m {
-      max-height:1000px ;
-      display: flex;
-      flex-direction: column-reverse;
-      align-items: center;
-    }
+  .m {
+    max-height:1000px ;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+  }
 
+  /* 円グラフ */
+  .graph {
+    height: 500px;
+    max-width: 400PX;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    margin:100px 1px auto;
+  }
 
-    /* 円グラフ */
-    .graph {
-      height: 500px;
-      max-width: 400PX;
-      box-sizing: border-box;
-      margin-bottom: 10px;
-      margin:100px 1px auto;
-    }
-    
-
-    /* 入力フォーム */
-    .format {
-      width: 500px;
-      max-width: 50%; 
-      color: #333;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      background-color: #fff;
-      margin-top:250px;
-      margin-right: calc(10% + 10px);
-      margin-left: calc(10% + 10px);
-    }
+  /* 入力フォーム */
+  .format {
+    width: 500px;
+    max-width: 50%; 
+    color: #333;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    margin-top:250px;
+    margin-right: calc(10% + 10px);
+    margin-left: calc(10% + 10px);
+  }
 
     /* 中央テキスト */
-    .z{
-      
-      margin-top: 250px;
-    }
-    .shu {
-      font-size: 30px;
-      color: 	#34495e ;
-      font-family: 'Kaisei Decol', serif;
-    }
-    
-    /* 結果画面 */
-
-
-    /* ロゴ */
-    .icon-logo{
-      height: 50px;
-      width: 50px;
-    }
-
-    /* リスト */
-    a{
-      font-size: 15px;
-    }
-
-    .icon-lists ul li {
-      padding: 5px;
-      font-size: 14px;
-      border-bottom: 2px solid #eee;
-      transition: background-color 0.3s ease;
-    }
-
-    .icon-lists ul li:hover {
-      background-color: #EEFFFF;
-      transform: scale(1.1);
-    }
+  .z{
+    margin-top: 250px;
   }
 
-
-  @media (max-width: 700px) {
-    /* グラフ */
-    .graph {
-      height: 500px;
-      max-width: 300PX;
-      box-sizing: border-box;
-      margin-bottom: 10px;
-      margin:100px 1px auto;
-    }
-
-    /* フッター */
-    .footer{
-      height: 80px; /* 適切な高さに調整する */
-    margin-top: calc(10% + 80px);
-    }
+  .shu {
+    font-size: 30px;
+    color: 	#34495e ;
+    font-family: 'Kaisei Decol', serif;
   }
+
+  /* ロゴ */
+  .icon-logo{
+    height: 50px;
+    width: 50px;
+  }
+
+  /* リスト */
+  a{
+    font-size: 15px;
+  }
+
+  .icon-lists ul li {
+    padding: 5px;
+    font-size: 14px;
+    border-bottom: 2px solid #eee;
+    transition: background-color 0.3s ease;
+  }
+
+  .icon-lists ul li:hover {
+    background-color: #EEFFFF;
+    transform: scale(1.1);
+  }
+}
+
+
+@media (max-width: 700px) {
+  /* グラフ */
+  .graph {
+    height: 500px;
+    max-width: 300PX;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    margin:100px 1px auto;
+  }
+
+  /* フッター */
+  .footer{
+  height: 80px; /* 適切な高さに調整する */
+  margin-top: calc(10% + 80px);
+  }
+}
