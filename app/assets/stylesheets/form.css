@@ -5,15 +5,14 @@
 
 /* フォームのスタイル */
 .format {
-  margin-top: 20px;
-  width: 500px;
-  max-width: 50%; 
+  width: 300px;
   color: #333;
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   background-color: #fff;
-  margin: 0 auto;
+  margin-top: 50px;
+  margin-right: 13%;
 }
 
 /* フォーム内要素のスタイル */
@@ -79,3 +78,4 @@
 .transportation-cost label {
   height: 3px; /* ラベルと入力フォームの間隔を調整 */
 }
+
