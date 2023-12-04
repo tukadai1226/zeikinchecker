@@ -1,8 +1,8 @@
 <script>
-var lastHoveredIcon = null;
+const lastHoveredIcon = null;
 
 function toggleListOnHover(listId) {
-  var list = document.getElementById(listId);
+  const list = document.getElementById(listId);
 
   if (lastHoveredIcon === listId && list.style.display !== 'none') {
     // カーソルが同じアイコンまたは文字に戻ってきたら何もしない
@@ -15,7 +15,7 @@ function toggleListOnHover(listId) {
 }
 
 function hideAllLists() {
-  var allLists = document.querySelectorAll('.icon-lists ul');
+  const allLists = document.querySelectorAll('.icon-lists ul');
   allLists.forEach(function(item) {
     item.style.display = 'none';
   });
