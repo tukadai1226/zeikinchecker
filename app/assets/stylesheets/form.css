@@ -1,0 +1,81 @@
+/* 金額入力フォームのスタイル */
+.right-align {
+  text-align: right;
+}
+
+/* フォームのスタイル */
+.format {
+  width: 300px;
+  color: #333;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  margin-top: 50px;
+  margin-right: 13%;
+}
+
+/* フォーム内要素のスタイル */
+.format label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: #555;
+}
+
+.format input[type="text"],
+.format input[type="number"],
+.format select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  color: #333;
+  margin-bottom: 15px;
+  box-sizing: border-box;
+  transition: border-color 0.3s;
+}
+
+.format input[type="text"].right-align,
+.format input[type="number"].right-align,
+.format select.right-align {
+  text-align: right;
+}
+
+.format input[type="text"]:focus,
+.format input[type="number"]:focus,
+.format select:focus {
+  border-color: #3498db;
+}
+
+/* ボタンのスタイル */
+.keisan button {
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+  margin-bottom: 10px; /* 余白の調整 */
+}
+
+
+.keisan button:hover {
+  background-color: #2980b9;
+}
+
+.basic-salary {
+  margin-top: 3px;
+}
+
+.countoly label,
+.age label,
+.num label,
+.overtime-pay label,
+.transportation-cost label {
+  height: 3px; /* ラベルと入力フォームの間隔を調整 */
+}
+

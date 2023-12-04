@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Salary Simulation</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<style>
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  a {
+    color: #999;
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: #000;
+  }
+
+  .flex {
+    display: flex;
+  }
+
+  hr {
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #e5e7eb;
+  }
+
+  .footer {
+    padding: 2rem;
+    font-size: 15px;
+    color: #999;
+    background: #fff;
+    margin-top:500px;
+  }
+
+  .footer__navi {
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+  }
+
+  .footer__navi li {
+    display: inline-block;
+  }
+
+  .footer__navi li:not(:last-child) {
+    margin-right: 16px;
+  }
+
+  .footer__logo {
+    display: inline-block;
+    margin-bottom: 1rem;
+  }
+
+
+@media(max-width: 1024px) {
+  .footer{
+    height:50px;
+    margin-top:calc(10% + 50px);
+  }
+
+  .md-flex {
+    display: flex;
+  }
+
+  .md-justify-between {
+    justify-content: space-between;
+  }
+
+  .copyright {
+    text-align: left;
+  }
+}
+
+@media (max-width: 700px) {
+  /* フッター */
+  .footer{
+    height: 80px; /* 適切な高さに調整する */
+    margin-top: calc(10% + 80px);
+  }
+}
+</style>
+<body>
+      <%# ヘッダー %>
+      <%= render partial: "header" %>
+  <div class="bg">
+    <div class="main">
+      <div class="m">
+      <%# 円グラフ %>
+      <div class= "graph">
+        <canvas id="myDonutChart" width="300" height="300"></canvas>
+      </div>
+      <%# 入力フォーム %>
+      <div class="format">
+      <%= render partial:"form"%>
+      </div>
+      <%# 上までがフォーマット %>
+      <div class="z">
+        <p class="shu">シミュレーション</p>
+      </div>
+      <%# 結果 %>
+      <%= render partial: "result" %>
+      <%# アイコン %>
+      <div>
+        <%= render partial: "icon"%>
+      </div>
+      <%# フッター %>
+      <div class="under">
+        <%= render partial: "footer"%>
+      </div>
+</div>

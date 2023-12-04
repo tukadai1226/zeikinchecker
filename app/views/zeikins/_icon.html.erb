@@ -1,0 +1,68 @@
+<script>
+const lastHoveredIcon = null;
+
+function toggleListOnHover(listId) {
+  const list = document.getElementById(listId);
+
+  if (lastHoveredIcon === listId && list.style.display !== 'none') {
+    // カーソルが同じアイコンまたは文字に戻ってきたら何もしない
+    return;
+  }
+
+  hideAllLists();
+  list.style.display = 'block';
+  lastHoveredIcon = listId;
+}
+
+function hideAllLists() {
+  const allLists = document.querySelectorAll('.icon-lists ul');
+  allLists.forEach(function(item) {
+    item.style.display = 'none';
+  });
+}
+</script>
+
+<div class="icons">
+  <div class="icon-container" >
+    <%= image_tag("pig.png", class: "icon-logo") %>
+    <h2 class="genre">年金</h2>
+    <div class="icon-lists">
+      <ul id="list1">
+        <li><%= link_to '老齢基礎年金', zeikin_path(1) %></li>
+      </ul>
+    </div>
+  </div>
+
+
+  <div class="icon-container" >
+    <%= image_tag("coin.png", class: "icon-logo") %>
+    <h2 class="genre">所得税</h2>
+    <div class="icon-lists">
+    <div class="lis">
+      <ul id="list2" >
+        <li><%= link_to '詳細1', zeikin_path(11) %></li>
+      </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="icon-container" >
+    <%= image_tag("clinical.png", class: "icon-logo") %>
+    <h2 class="genre">医療・保険</h2>
+    <div class="icon-lists">
+      <ul id="list3" >
+        <li><%= link_to '詳細1', zeikin_path(21) %></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="icon-container" >
+    <%= image_tag("house.png", class: "icon-logo") %>
+    <h2 class="genre">住宅</h2>
+    <div class="icon-lists">
+      <ul id="list4" >
+        <li><%= link_to '詳細1', zeikin_path(31) %></li>
+      </ul>
+    </div>
+  </div>
+</div>

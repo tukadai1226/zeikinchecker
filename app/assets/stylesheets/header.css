@@ -1,0 +1,197 @@
+header {
+  background-color: #FFFF !important;
+  height: 70px !important;
+}
+.hedder{
+  height: 95%;
+  box-shadow: 6px 6px 10px 0px rgba(0, 0, 0, 0.4);
+}
+.kk{
+  border-radius: 3px;
+  display: flex;
+}
+.heading {
+  width: 50%;
+  margin-left: 30px;
+}
+
+.navbar {
+  width: 50%;
+  padding: 10px;
+}
+
+.nav-lists {
+  display: flex;
+  justify-content:flex-end  !important;
+  padding: 0 10px;
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+
+.title {
+  margin-top: 10px;
+  display: flex;
+  overflow: hidden;
+  color: #aa8f7b;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+.title span {
+  display: block;
+  transform: translate(0, 105%);
+  transition: transform cubic-bezier(0.215, 0.61, 0.355, 1) 0.5s;
+}
+
+.title.-visible span {
+  transform: translate(0);
+}
+
+.title span:nth-child(2) {
+  transition-delay: 0.06s;
+}
+.title span:nth-child(3) {
+  transition-delay: 0.12s;
+}
+.title span:nth-child(4) {
+  transition-delay: 0.18s;
+}
+.title span:nth-child(5) {
+  transition-delay: 0.24s;
+}
+.title span:nth-child(6) {
+  transition-delay: 0.30s;
+}
+.title span:nth-child(7) {
+  transition-delay: 0.36s;
+}
+.title span:nth-child(8) {
+  transition-delay: 0.42s;
+}
+.title span:nth-child(9) {
+  transition-delay: 0.48s;
+}
+.title span:nth-child(10) {
+  transition-delay: 0.54s;
+}
+.title span:nth-child(11) {
+  transition-delay: 0.6s;
+}
+.title span:nth-child(12) {
+  transition-delay: 0.66s;
+}
+.title span:nth-child(13) {
+  transition-delay: 0.72s;
+}
+.title span:nth-child(14) {
+  transition-delay: 0.78s;
+}
+
+.lists {
+  list-style: none;
+  margin-bottom: 10px;
+  margin-right: 10px;
+  margin-top: 10px;
+}
+
+.list {
+  display: block;
+  width: 100px;
+  padding: 10px 0;
+  margin-bottom: 10px;
+  border-radius: 6px;
+  background-repeat: no-repeat;
+  background-position: 100% 0;
+  background-size: 200% auto;
+  background-image: linear-gradient(
+    to right,
+    #006400 0%,
+    #006400 50%,
+    #2E8B57 50%,
+    #2E8B57 100%
+  );
+  box-shadow: 0 3px 10px rgb(0 0 0 / 16%);
+  transition: background-position ease 0.4s;
+  text-align: center;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.list:hover {
+  background-position: 0 0;
+}
+
+.nav-lists {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 1.0s ease, transform 1.0s ease;
+}
+
+.nav-lists.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.hedder {
+  position: relative;
+  overflow: hidden; /* 子要素のオーバーフローを隠す */
+}
+
+.navbar {
+  width: 100%;
+  position: fixed;
+  position: absolute;
+  bottom: -20px; /* ヘッダーの中央に配置（35pxはヘッダーの高さの半分） */
+  transition: bottom 2.0s ease 10.0s; /* アニメーションを追加 *//* 遅延を追加 */
+}
+
+body.loaded .nav-lists,
+body.loaded .navbar {
+  transition: opacity 1.0s ease, transform 1.0s ease; /* 遅延を削除 */
+}
+
+.new-hamburger-btn {
+  display: none;
+  box-sizing: border-box;
+  cursor: pointer;
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 3;
+  color: #333;
+  height: 50px;
+  width: 50px;
+  border: 2px solid gray;
+  border-radius: 20%;
+}
+
+.new-nav-lists {
+  display: none;
+  list-style: none;
+  padding: 0;
+  position: fixed;
+  top: 60px;
+  right: 80px;
+  border-radius: 5px;
+  z-index: 2;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.new-nav-lists.visible {
+  margin-top: 20px;
+  display: none;
+  flex-direction: column;
+  opacity: 1;
+}
+
+.new-hamburger-btn::before,
+.new-hamburger-btn::after,
+.new-hamburger-btn div {
+  display: block;
+  background-color: gray;
+  height: 4px;
+  width: 30px;
+  margin: 9px auto;
+}

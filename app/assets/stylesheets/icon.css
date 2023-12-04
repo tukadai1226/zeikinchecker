@@ -1,0 +1,69 @@
+.icons {
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: calc(10% - 10px);
+}
+
+.genre {
+  font-size: 15px;
+  color: gray;
+  transform: scale(1.1);
+}
+
+.icon-logo {
+  margin-top: 30px;
+  width: 80px;
+  height: 80px;
+  transition: transform 0.3s ease;
+}
+
+.icon-logo:hover {
+  transform: scale(1.2);
+}
+
+.icon-lists {
+  display: none;
+  max-height: 0;
+  transition: max-height 0.3s ease-out;
+  border: 1px solid #ddd;
+  border-radius: 1px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.icon-lists ul {
+  padding: 0;
+  list-style: none;
+  margin: 0;
+}
+
+.icon-lists ul li {
+  padding: 5px;
+  border-bottom: 2px solid #eee;
+  transition: background-color 0.3s ease;
+}
+
+.icon-lists ul li:hover {
+  background-color: #EEFFFF;
+  transform: scale(1.1);
+}
+
+a {
+  text-decoration: none;
+  color: gray;
+  font-size: 30px;
+}
+
+.icon-container {
+  cursor: pointer;
+  
+}
+
+.icon-container:hover {
+  transform: scale(1.1);
+}
+
+.icon-container:hover .icon-lists {
+  display: block;
+}
